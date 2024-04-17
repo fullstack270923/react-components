@@ -11,12 +11,21 @@ class App extends Component {
     ]
   }
 
+  deleteCar = (_id) => {
+    console.log(_id);
+    //const filtered_cars = this.state.filter(car => car.id == _id ? false : true)
+    const filtered_cars = this.state.cars.filter(car => car.id !== _id)
+    this.setState({
+      cars: filtered_cars
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1>Garage</h1>
-          <Garage cars={this.state.cars} />
+          <Garage cars={this.state.cars} delete_car={this.deleteCar} />
         </header>
       </div>
     );

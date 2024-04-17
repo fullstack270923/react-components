@@ -13,9 +13,9 @@ class Garage extends Component {
         //     { brand: "Chevrolet", model: "Cicalvaliervic", color: "orange", year: 2024, id: 3 }
         //   ]
         const cars_list = this.props.cars.map(car => 
-            <Car brand={car.brand} model={car.model} 
-                 color={car.color} year={car.year} key={car.id} />)
-                 
+            <Car brand={car.brand} model={car.model} id={car.id}
+                 color={car.color} year={car.year} key={car.id} delete_car={this.props.delete_car} />)
+
         // map loop output:
         //         [
         //           <Car brand="Honda" model="Civic" color="green" year="2020" />
