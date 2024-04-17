@@ -7,6 +7,7 @@ class Car extends Component {
     }
 
     render() {
+        
         console.log(this.props);
         
         // const brand = this.props.brand
