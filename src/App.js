@@ -5,8 +5,14 @@ class App extends React.Component {
 
     // data
     state = {
-      name: 'Danny',
+      username: 'Danny',
       age: 30
+    }
+
+    handleChange = (e) => {
+      this.setState({ [e.target.name]: e.target.value })
+      // this.setState({ username: e.target.value })
+      // this.setState({ age: e.target.value })
     }
 
     // redner
@@ -16,9 +22,12 @@ class App extends React.Component {
       return (
         <div className="App">
           <header className="App-header">
-            <h1>Hello {this.state.name}</h1>
+            <h1>Hello {this.state.username}</h1>
             <h1>AGE = {this.state.age}</h1>
-
+            <button onClick={() => this.setState({ age: this.state.age + 1}) }>ADD AGE</button>
+            <button onClick={() => this.setState({ age: this.state.age - 1}) }>SUB AGE</button>
+            <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+            <input type="number" name="age" value={this.state.age} onChange={this.handleChange} />            
           </header>
         </div>
       );
