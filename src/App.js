@@ -20,7 +20,7 @@ class App extends React.Component {
 
   // useEffect
   componentDidMount() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.setState({ time: new Date() })
     }, 1000)
   }
