@@ -6,6 +6,7 @@ class App extends React.Component {
     // data
     state = {
       username: 'Danny',
+      email: 'incognito@johndoe.com',
       age: 30
     }
 
