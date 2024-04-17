@@ -35,7 +35,9 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Hello {this.state.username}</h1>
           <h1>AGE = {this.state.age}</h1>
-          <h1>TIME = {this.state.time.getHours() + ':' + this.state.time.getMinutes() + ':' +
+          <h1>TIME = {
+            (this.state.time.getHours() > 9 ? this.state.time.getHours() : ('0' + this.state.time.getHours())) + ':'+
+            (this.state.time.getMinutes() > 9 ? this.state.time.getMinutes() : ('0' + this.state.time.getMinutes())) + ':'+
             (this.state.time.getSeconds() > 9 ? this.state.time.getSeconds() : ('0' + this.state.time.getSeconds()))}</h1>
           <button onClick={() => this.setState({ age: this.state.age + 1 })}>ADD AGE</button>
           <button onClick={() => this.setState({ age: this.state.age - 1 })}>SUB AGE</button>
