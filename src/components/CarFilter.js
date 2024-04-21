@@ -20,6 +20,7 @@ class CarFilter extends Component {
                 <p>Filter: <input type="number" 
                                   name="year" onChange={this.handleChange}
                                   value={this.state.year_filter} placeholder="year" /></p>
+                <p>Filter by Price: [targil]</p>
             </div>
         );
     }

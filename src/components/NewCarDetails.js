@@ -50,6 +50,7 @@ class NewCarDetials extends Component {
                     </p>
                     <p>Year: <input type="number" name="year" onChange={this.handleChange}
                         value={this.state.car_from_input.year} placeholder="year" required /></p>
+                    <p>Price: [targil]</p>
                     <button type="submit">Buy New Car</button>
                     <p>just for fun -- background color: <input type="color" name="color2" placeholder="enter color" onChange={this.handleChange} /> </p>                    
                 </form>
