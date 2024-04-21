@@ -6,6 +6,21 @@ class Car extends Component {
 
     }
 
+    constructor(props) {
+        console.log('============= ctor Car');
+        super(props)
+    }
+
+    componentDidMount() {
+        // clean timer
+        console.log('========== finished mounting car component');
+    }
+
+    componentWillUnmount  () {
+        // clean timer
+        console.log('========== removing car component ' + this.props.brand);
+    }    
+
     render() {
 
         console.log(this.props);
@@ -28,6 +43,8 @@ class Car extends Component {
             </div>)
 
     }
+
+
 }
 
 export default Car;

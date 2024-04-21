@@ -12,7 +12,9 @@ class Garage extends Component {
         //     { brand: "Ferrari", model: "Testa Rossa", color: "red", year: 2023, id: 2 },
         //     { brand: "Chevrolet", model: "Cicalvaliervic", color: "orange", year: 2024, id: 3 }
         //   ]
-        const cars_list = this.props.cars.map(car => 
+        
+        const cars_list = this.props.cars.filter(car => car.year >= this.props.filter_by_year)
+            .map(car => 
             <Car brand={car.brand} model={car.model} id={car.id}
                  color={car.color} year={car.year} key={car.id} delete_car={this.props.delete_car} />)
 
