@@ -10,7 +10,7 @@ class App extends Component {
 
   state = {
     cars: [
-      { brand: "Honda", model: "Civic", color: "green", year: 2020, hybrid: true, id: 1 },
+      { brand: "Honda", model: "Civic", color: "green", year: 2020, id: 1 },
       { brand: "Ferrari", model: "Testa Rossa", color: "red", year: 2023, id: 2 },
       { brand: "Chevrolet", model: "Cicalvaliervic", color: "orange", year: 2024, id: 3 }
     ],
