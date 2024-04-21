@@ -14,7 +14,8 @@ class App extends Component {
       { brand: "Ferrari", model: "Testa Rossa", color: "red", year: 2023, id: 2 },
       { brand: "Chevrolet", model: "Cicalvaliervic", color: "orange", year: 2024, id: 3 }
     ],
-    filter_by_year: 0
+    filter_by_year: 0,
+    filter_by_price: 0
   }
   
   addCar = (_car) => {
@@ -39,11 +40,19 @@ class App extends Component {
     })
   }
 
-  setFilter = (filter_by_year) => {
-    this.setState({
-      filter_by_year
-    })
+  setFilter = (filter) => {
+    // { filter_by_year: 2023 }
+    this.setState(filter)
   }
+
+
+  // 2 filters
+  // setFilter = (filter) => {
+  //   // { filter_by_year: 2021 }
+  //   // { filter_by_price: 200000 }
+  //   this.setState( filter )
+  //   this.setState({filter_by_year: 2023})
+  // }
 
   shouldComponentUpdate(nextProps, nextState) {
     //Only update if count has changed
