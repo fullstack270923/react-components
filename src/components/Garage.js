@@ -16,7 +16,11 @@ class Garage extends Component {
         const cars_list = this.props.cars.filter(car => car.year >= this.props.filter_by_year)
             .map(car => 
             <Car brand={car.brand} model={car.model} id={car.id}
-                 color={car.color} year={car.year} key={car.id} delete_car={this.props.delete_car} />)
+                 color={car.color} year={car.year} key={car.id} 
+                 update={car.update}
+                 startUpdate = {this.props.startUpdate}
+                 finishUpdate = {this.props.finishUpdate}
+                 delete_car={this.props.delete_car} />)
 
         // map loop output:
         //         [

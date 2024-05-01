@@ -10,9 +10,9 @@ class App extends Component {
 
   state = {
     cars: [
-      { brand: "Honda", model: "Civic", color: "green", year: 2020, id: 1 },
-      { brand: "Ferrari", model: "Testa Rossa", color: "red", year: 2023, id: 2 },
-      { brand: "Chevrolet", model: "Cicalvaliervic", color: "orange", year: 2024, id: 3 }
+      { brand: "Honda", model: "Civic", color: "green", year: 2020, update: false, id: 1 },
+      { brand: "Ferrari", model: "Testa Rossa", color: "red", year: 2023, update: false, id: 2 },
+      { brand: "Chevrolet", model: "Cicalvaliervic", color: "orange", year: 2024, update: false, id: 3 }
     ],
     filter_by_year: 0,
     filter_by_price: 0
@@ -64,6 +64,19 @@ class App extends Component {
     return true;
   }
 
+  startUpdate = (_id) => {
+    const new_cars = this.state.cars.map(car => car.id == _id ? { ...car, update: true} : car)
+    this.setState({
+      cars: new_cars
+    })
+  }
+  finishUpdate = (_id) => {
+    const new_cars = this.state.cars.map(car => car.id == _id ? { ...car, update: false} : car)
+    this.setState({
+      cars: new_cars
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -74,7 +87,8 @@ class App extends Component {
           <CarFilter set_filter={this.setFilter}/>
           <hr />
           <Garage cars={this.state.cars} delete_car={this.deleteCar} 
-            filter_by_year={this.state.filter_by_year} />
+            filter_by_year={this.state.filter_by_year} startUpdate = {this.startUpdate}
+            finishUpdate = {this.finishUpdate} />
         </header>
       </div>
     );
