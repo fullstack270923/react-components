@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import React, { useState } from "react";
+import { UseState } from './hooks/use_state';
+import { UseRef } from './hooks/use_ref';
+import { UseRef2 } from './hooks/use_ref2';
 import './App.css';
 
 function App() {
@@ -16,7 +19,7 @@ function App() {
 
   function changeCount(amount) {
     // this.setState({ 
-    //   count: count + amount
+    //   counter: counter + amount
     // })
     setCounter(prevCount => prevCount + amount)
   }
@@ -24,10 +27,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Counter: {counter}</h1>
-        <button onClick={() => changeCount(1)}> + </button>
-        <button onClick={() => changeCount(-1)}> - </button>
-        <button onClick={() => setCounter(Math.floor(Math.random() * 100))}> Random </button>
+        <UseState start="100"/>
+        <UseRef start="200"/>
+        <UseRef2 start="200"/>
       </header>
     </div>
   );
