@@ -5,11 +5,14 @@ import './App.css';
 function App() {
 
   // state = {
-  //   counter: 0
+  //   counter: 0,
+  //   update: true
   // }
 
   // hook - state
+  // DI 
   const [counter, setCounter] = useState(0)
+  const [update, setUpdate] = useState(true)
 
   function changeCount(amount) {
     // this.setState({ 
