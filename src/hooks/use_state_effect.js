@@ -44,7 +44,7 @@ const UseState = (props) => {
     // this.setState({ 
     //   counter: counter + amount
     // })
-    setCounter(prevCount => {
+    setCounter2(prevCount => {
         prevCounter.current = prevCount
         return prevCount + amount 
     }

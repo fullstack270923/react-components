@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React, { useState } from "react";
-import { UseState } from './hooks/use_state';
+import { UseState } from './hooks/use_state_effect';
 import { UseRef } from './hooks/use_ref';
 import { UseRef2 } from './hooks/use_ref2';
 import './App.css';
