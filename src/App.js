@@ -46,6 +46,8 @@ function App() {
     setCounter(prevCount => prevCount + amount)
   }
 
+  //<p>PWD: <input type="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[*]).{8,}$" required /></p>
+  
   return (
     <div className="App">
       <header className="App-header">
